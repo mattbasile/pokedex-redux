@@ -13,7 +13,97 @@ code {
     monospace;
 }
 
-.header-poke{
+/* .header-poke{
   clip-path: polygon(21% 53%, 100% 52%, 99% 70%, 29% 71%, 19% 80%, 0% 80%, 0 53%);
 
+} */
+
+.pokedex-container{
+   /* border: 1px solid purple; */
+    height: 600px;
+    width: 60%;
+    margin: 30px auto;
+    display: flex;
+    border-radius: 2px;
+}
+
+.left-pokedex-container{
+  height: 600px;
+  width: 50%;
+  border: 1px solid purple;
+  border-radius: 2px;
+}
+.right-pokedex-container{
+  height: 535px;
+  width: 50%;
+  border: 1px solid purple;
+  border-radius: 2px;
+  align-self: flex-end;
+}
+.poke-light-container{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.right-light-cutout{
+  transform: rotateY(180deg);
+  transform: rotateX(180deg);
+  height: 100px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.box-1{
+  width: 50%;
+  height: 100px;
+  background: #CC1F1A;
+ display: flex;
+ align-items: center;
+}
+.box-2{
+  border-top: 50px solid transparent;
+  border-left: 59px solid #CC1F1A;
+  border-bottom: 50px solid transparent
+  }
+.box-3{
+  width: 50%;
+  height: 65px;
+  background: #CC1F1A;
+  z-index: 1;
+    position: absolute;
+    right: 0;
+}
+.divider{
+  width: 5%;
+  height: 535px;
+  align-self: flex-end;
+}
+
+.divider-box{
+  height: 66px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+/* Pokedex Lights */
+
+.blue-light{
+  margin: 10px;
+  height: 73px;
+  width: 40%;
+  border-radius: 50%;
+  border: 4px solid white;
+  align-self: center;
+}
+.three-lights{
+  display: flex;
+  
+}
+.light{
+  margin: 2px;
+  width: 30%;
+  height: 30px;
+  border-radius: 50%;
 }
