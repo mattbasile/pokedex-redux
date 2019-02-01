@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.header-poke{
+  clip-path: polygon(21% 53%, 100% 52%, 99% 70%, 29% 71%, 19% 80%, 0% 80%, 0 53%);
+
+}

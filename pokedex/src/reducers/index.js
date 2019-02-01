@@ -8,6 +8,7 @@ const initialState = {
     selectedPokemon: [],
     isFetchingPokemon: false,
     error: null,
+    pokemonImg: null
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -22,7 +23,8 @@ export default (state = initialState, { type, payload }) => {
     return { 
         ...state, 
         isFetchingPokemon: false,
-        selectedPokemon: payload
+        selectedPokemon: payload,
+        pokemonImg: `https://img.pokemondb.net/artwork/${payload.name}.jpg`
     };
   case FETCH_POKEMON_FAIL:
     return { 

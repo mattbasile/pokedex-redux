@@ -35,8 +35,10 @@ componentDidMount(){
          handleChanges={this.handleChanges}
          isFetchingPokemon={this.props.isFetchingPokemon}
          error={this.props.error}
-         searchPoke={this.state.searchPoke}/>
-         
+         searchPoke={this.state.searchPoke}
+         pokemonImg={this.props.pokemonImg}
+
+         />
       </div>
     )
   }
@@ -47,7 +49,8 @@ componentDidMount(){
 const mapStateToProps = state =>( {
   selectedPokemon: state.selectedPokemon,
   isFetchingPokemon: state.isFetchingPokemon,
-  error: state.error
+  error: state.error,
+  pokemonImg: state.pokemonImg
 })
 
 export default connect(
