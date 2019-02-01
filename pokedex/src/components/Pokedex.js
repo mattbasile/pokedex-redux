@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PikaGif from '../pika.gif'
 
 export default class Pokedex extends Component {
   render() {
@@ -10,7 +11,9 @@ export default class Pokedex extends Component {
         <form onSubmit={this.props.getPokemon}>
             <input onChange={this.props.handleChanges} name="searchPoke" type="text" placeholder="Search..."/>
         </form>
-        <img src={this.props.pokemonImg}/>
+        {this.props.error ? (<img src={PikaGif}/>) : (<img src={this.props.pokemonImg}/>)}
+       
+
         <div className="flex bg-red w-4/5 mx-auto h-screen border border-8 border-red">
           <div className="bg-red w-1/2 h-full flex flex-col border border-blue">
             <div className="header-poke"></div>
