@@ -4,6 +4,10 @@ export const FETCH_POKEMON_START = "FETCH_POKEMON_START";
 export const FETCH_POKEMON_SUCCESS = "FETCH_POKEMON_SUCCESS";
 export const FETCH_POKEMON_FAIL = "FETCH_POKEMON_FAIL"; 
 
+export const SEARCH_POKEMON_START = "SEARCH_POKEMON_START";
+export const SEARCH_POKEMON_SUCCESS = "SEARCH_POKEMON_SUCCESS";
+export const SEARCH_POKEMON_FAIL = "SEARCH_POKEMON_FAIL"; 
+
 
 export const getPokemon = () => dispatch =>{
   dispatch({type: FETCH_POKEMON_START});
@@ -12,3 +16,11 @@ export const getPokemon = () => dispatch =>{
   .then(res => console.log(res.data))
   .catch(err => console.log(err));
 }
+
+export const findPokemon = pokemon => dispatch =>{
+    dispatch({type: FETCH_POKEMON_START});
+    axios
+    .get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err));
+  }

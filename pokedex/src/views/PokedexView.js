@@ -5,13 +5,26 @@ import {getPokemon} from '../actions'
 
 
 class PokedexView extends Component {
+constructor(props){
+    super(props);
+    this.state={
+        searchPoke: '',
+    }
+}
+handleChanges = e =>{
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
+
+
 componentDidMount(){
     this.props.getPokemon()
 }
   render() {
     return (
       <div>
-        <Pokedex/>
+        <Pokedex handleChanges={this.handleChanges}/>
       </div>
     )
   }
