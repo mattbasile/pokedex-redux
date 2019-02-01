@@ -15,7 +15,8 @@ export default (state = initialState, { type, payload }) => {
   case FETCH_POKEMON_START:
     return { 
         ...state, 
-        isFetchingPokemon: true
+        isFetchingPokemon: true,
+        error: null
     };
   case FETCH_POKEMON_SUCCESS:
     return { 

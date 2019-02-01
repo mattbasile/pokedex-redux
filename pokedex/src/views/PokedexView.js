@@ -17,7 +17,6 @@ handleChanges = e =>{
     })
 }
 getPokemon = e =>{
-    console.log('searching')
     e.preventDefault();
     this.props.getPokemon(this.state.searchPoke);
     this.setState({searchPoke: '',})
@@ -30,7 +29,14 @@ componentDidMount(){
   render() {
     return (
       <div>
-        <Pokedex selectedPokemon={this.props.selectedPokemon} getPokemon={this.getPokemon} handleChanges={this.handleChanges}/>
+        <Pokedex 
+         selectedPokemon={this.props.selectedPokemon}
+         getPokemon={this.getPokemon}
+         handleChanges={this.handleChanges}
+         isFetchingPokemon={this.props.isFetchingPokemon}
+         error={this.props.error}
+         searchPoke={this.state.searchPoke}/>
+         
       </div>
     )
   }
@@ -39,7 +45,9 @@ componentDidMount(){
 
 
 const mapStateToProps = state =>( {
-  selectedPokemon: state.selectedPokemon
+  selectedPokemon: state.selectedPokemon,
+  isFetchingPokemon: state.isFetchingPokemon,
+  error: state.error
 })
 
 export default connect(
