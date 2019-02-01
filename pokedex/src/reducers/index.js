@@ -5,7 +5,7 @@ import {
 } from '../actions'
 
 const initialState = {
-    selectedpokemon: [],
+    selectedPokemon: [],
     isFetchingPokemon: false,
     error: null,
 }
@@ -21,7 +21,7 @@ export default (state = initialState, { type, payload }) => {
     return { 
         ...state, 
         isFetchingPokemon: false,
-        selectedpokemon: payload
+        selectedPokemon: payload
     };
   case FETCH_POKEMON_FAIL:
     return { 
