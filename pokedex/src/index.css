@@ -86,7 +86,7 @@ body {
     right: 0;
 }
 .divider{
-  width: 5%;
+  width: 3%;
   height: 535px;
   align-self: flex-end;
 }
@@ -261,4 +261,38 @@ body {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+/* Right side of PokeDex */
+
+
+.stat-screen-container{
+  width: 100%;
+  height: 230px;
+  display: flex;
+}
+.stat-screen{
+  width: 80%;
+  background: black;
+  margin: 0 auto;
+  border: 10px solid #DAE1E7;
+  border-radius: 7px;
+}
+.random-btns-container{
+  height: 100px;
+}
+.random-btns{
+  width: 60%;
+  margin: auto;
+  display: flex;
+}
+.blue-box{
+  width: 20%; 
+  height: 45px;
+  background: #6CB2EB;
+  border: 1px solid white;
+}
+
+.search-bar{
+  height: 105px;
+  
 }

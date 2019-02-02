@@ -60,7 +60,9 @@ componentDidMount(){
          error={this.props.error}
          searchPoke={this.state.searchPoke}
          pokemonImg={this.props.pokemonImg}
-        getPokemonById={this.getPokemonById}
+         getPokemonById={this.getPokemonById}
+         pokemonMoves={this.props.pokemonMoves}
+         pokemonTypes={this.props.pokemonTypes}
          />
       </div>
     )
@@ -73,7 +75,9 @@ const mapStateToProps = state =>( {
   selectedPokemon: state.selectedPokemon,
   isFetchingPokemon: state.isFetchingPokemon,
   error: state.error,
-  pokemonImg: state.pokemonImg
+  pokemonImg: state.pokemonImg,
+  pokemonMoves: state.pokemonMoves,
+  pokemonTypes: state.pokemonTypes
 })
 
 export default connect(

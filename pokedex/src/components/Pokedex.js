@@ -6,15 +6,12 @@ export default class Pokedex extends Component {
 
  
   render() {
-    console.log(this.props.pokemonImg)
+    console.log(this.props.pokemonTypes)
     return (
       <div>
         { this.props.error ? (<h1>That Pokemon is {this.props.error.response.data}</h1>) :
             this.props.isFetchingPokemon ? (<h1>Gotta Catch Em All </h1>): (<h1>{this.props.selectedPokemon.name}</h1>) }
-        <form onSubmit={this.props.getPokemon}>
-            <input onChange={this.props.handleChanges} name="searchPoke" type="text" placeholder="Search..."/>
-        </form>
-       
+        
 
         <div className="pokedex-container">
           <div className="left-pokedex-container bg-red-light">
@@ -35,7 +32,6 @@ export default class Pokedex extends Component {
               <div className={this.props.isFetchingPokemon ? 'trans-screen' : 'screen'} >
               {this.props.error ? (<img src={PikaGif}/>) : this.props.isFetchingPokemon ? (<img className="rotate-center" src={PokeBall}/>) : (<img src={this.props.pokemonImg}/>)}
               </div>
-            
             <div className="corner-style">
             </div>
             </div>
@@ -46,12 +42,7 @@ export default class Pokedex extends Component {
               </div>
               <i onClick={e => this.props.getPokemonById(e, this.props.selectedPokemon)} className="fas fa-caret-right fwd-btn text-orange-lightest "/>
             </div>
-
-
-
-            </div>
-            
-
+        </div>
           <div className="divider">
             <div className="divider-box"></div>
             <div className="divider-box"></div>
@@ -65,12 +56,47 @@ export default class Pokedex extends Component {
 
 
           <div className="right-pokedex-container">
-          <div className="right-light-cutout ">
+            <div className="right-light-cutout ">
             <div className="box-1"></div>
             <div className="box-2"></div>
             <div className="box-3"></div>
           </div>
-             
+            <div className="stat-screen-container bg-red-light">
+              <div className="stat-screen text-green align-left">
+                {this.props.selectedPokemon === false ? (<p>Searching...</p> )
+                : (<div>
+                    <h2>Name:</h2>
+                    <p>{this.props.selectedPokemon.name}</p>    
+                    <h2>Type:</h2>
+                    <ul>{this.props.pokemonTypes.map(type => <li>{type.type.name}</li>)}</ul>
+                    <h2>Moves:</h2>
+                    <ul>{this.props.pokemonMoves.map(move => <li>{move.move.name}</li>)}</ul>
+                  </div>)
+                
+              }
+              </div>
+            </div>
+            <div className="search-bar bg-red-light">
+              <form onSubmit={this.props.getPokemon}>
+                  <input className="mt-6 bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-3/5 py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple"onChange={this.props.handleChanges} name="searchPoke" type="text" placeholder="Search..."/>
+              </form>
+            </div>
+            <div className="random-btns-container bg-red-light">
+            <div className="random-btns">
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+            </div>
+            <div className="random-btns">
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              <div className="blue-box"></div>
+              </div>
+            </div>
         </div>
         </div>
       </div>
