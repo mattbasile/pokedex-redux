@@ -11,7 +11,7 @@ export default class Pokedex extends Component {
         <form onSubmit={this.props.getPokemon}>
             <input onChange={this.props.handleChanges} name="searchPoke" type="text" placeholder="Search..."/>
         </form>
-        {this.props.error ? (<img src={PikaGif}/>) : (<img src={this.props.pokemonImg}/>)}
+        
         */}
 
         <div className="pokedex-container">
@@ -29,8 +29,16 @@ export default class Pokedex extends Component {
               <div className="box-2"></div>
               <div className="box-3"></div>
             </div>
+            <div className="poke-screen">
+              <div className="screen">
+              {this.props.error ? (<img src={PikaGif}/>) : (<img src={this.props.pokemonImg}/>)}
+              </div>
             
+            <div className="corner-style">
+            </div>
+            </div>
           </div>
+
           <div className="divider">
             <div className="divider-box"></div>
             <div className="divider-box"></div>
@@ -41,6 +49,8 @@ export default class Pokedex extends Component {
             <div className="divider-box"></div>
             <div className="divider-box"></div>
           </div>
+
+
           <div className="right-pokedex-container">
           <div className="right-light-cutout ">
             <div className="box-1"></div>
