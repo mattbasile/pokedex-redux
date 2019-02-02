@@ -22,20 +22,31 @@ getPokemon = e =>{
     this.setState({searchPoke: '',})
     e.target.reset();
 }
-colorChange = () =>{
+getPokemonById = (e, pokemon) =>{
+    this.colorChange();
+    e.preventDefault();
+    const fwd = pokemon.id + 1
+    console.log(fwd)
+    const back = pokemon.id -1
+    console.log(e.target.classList)
+    e.target.classList.contains('fwd-btn')
+    ? this.props.getPokemon(fwd)
+    : this.props.getPokemon(back);
+    
+}
 
-    const blue = document.querySelector('.blue-light');
-    this.props.isFetchingPokemon ? 
-    setInterval( () =>
-        blue.classList.add('bg-blue-darkest')
-    , 100) :
-    blue.classList.remove('bg-blue-darkest')
+
+colorChange = () =>{
+    const blue = document.querySelector('.blue-light')
+    blue.classList.add('flashblue')
+    setTimeout(()=>{
+        blue.classList.remove('flashblue')
+    }, 3000)
     
   }
 
 
 componentDidMount(){
-    this.colorChange()
     this.props.getPokemon('pikachu')
 }
   render() {
@@ -49,7 +60,7 @@ componentDidMount(){
          error={this.props.error}
          searchPoke={this.state.searchPoke}
          pokemonImg={this.props.pokemonImg}
-
+        getPokemonById={this.getPokemonById}
          />
       </div>
     )
@@ -68,6 +79,7 @@ const mapStateToProps = state =>( {
 export default connect(
     mapStateToProps,
    {
-     getPokemon
+     getPokemon,
+    
    }
  )(PokedexView);

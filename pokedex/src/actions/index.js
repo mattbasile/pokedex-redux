@@ -12,3 +12,12 @@ export const getPokemon = pokemon => dispatch =>{
     .then(res => dispatch({type: FETCH_POKEMON_SUCCESS, payload: res.data}))
     .catch(err => dispatch({type: FETCH_POKEMON_FAIL, payload: err}))
   }
+
+  // export const getPokemonByID = id => dispatch =>{
+  //   dispatch({type: FETCH_POKEMON_ID_START});
+  //   axios
+  //   .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  //   .then(res => dispatch({type: FETCH_POKEMON_SUCCESS, payload: res.data}))
+  //   .catch(err => dispatch({type: FETCH_POKEMON_FAIL, payload: err}))
+  // }
+

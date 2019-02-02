@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import PikaGif from '../pika.gif'
+import PikaGif from '../pika.gif';
+import PokeBall from '../pokeball.png';
 
 export default class Pokedex extends Component {
 
@@ -31,19 +32,19 @@ export default class Pokedex extends Component {
               <div className="box-3"></div>
             </div>
             <div className="poke-screen">
-              <div className="screen">
-              {this.props.error ? (<img src={PikaGif}/>) : (<img src={this.props.pokemonImg}/>)}
+              <div className={this.props.isFetchingPokemon ? 'trans-screen' : 'screen'} >
+              {this.props.error ? (<img src={PikaGif}/>) : this.props.isFetchingPokemon ? (<img className="rotate-center" src={PokeBall}/>) : (<img src={this.props.pokemonImg}/>)}
               </div>
             
             <div className="corner-style">
             </div>
             </div>
             <div className="bottom-btns">
-            <i class="fas fa-caret-left back-btn"/>
-              <div className="name-bar">
+            <i onClick={e => this.props.getPokemonById(e, this.props.selectedPokemon)}className="fas fa-caret-left back-btn text-orange-lightest"/>
+              <div className="name-bar shadow-md">
                 <p>{ this.props.error ? "???" : this.props.isFetchingPokemon ? "Gotta Catch Em All" :this.props.selectedPokemon.name}</p>
               </div>
-              <i class="fas fa-caret-right fwd-btn"/>
+              <i onClick={e => this.props.getPokemonById(e, this.props.selectedPokemon)} className="fas fa-caret-right fwd-btn text-orange-lightest "/>
             </div>
 
 
