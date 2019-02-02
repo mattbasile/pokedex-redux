@@ -2,17 +2,18 @@ import React, { Component } from 'react'
 import PikaGif from '../pika.gif'
 
 export default class Pokedex extends Component {
+
+ 
   render() {
     console.log(this.props.pokemonImg)
     return (
       <div>
-        {/* { this.props.error ? (<h1>That Pokemon is {this.props.error.response.data}</h1>) :
+        { this.props.error ? (<h1>That Pokemon is {this.props.error.response.data}</h1>) :
             this.props.isFetchingPokemon ? (<h1>Gotta Catch Em All </h1>): (<h1>{this.props.selectedPokemon.name}</h1>) }
         <form onSubmit={this.props.getPokemon}>
             <input onChange={this.props.handleChanges} name="searchPoke" type="text" placeholder="Search..."/>
         </form>
-        
-        */}
+       
 
         <div className="pokedex-container">
           <div className="left-pokedex-container bg-red-light">
@@ -37,7 +38,18 @@ export default class Pokedex extends Component {
             <div className="corner-style">
             </div>
             </div>
-          </div>
+            <div className="bottom-btns">
+            <i class="fas fa-caret-left back-btn"/>
+              <div className="name-bar">
+                <p>{ this.props.error ? "???" : this.props.isFetchingPokemon ? "Gotta Catch Em All" :this.props.selectedPokemon.name}</p>
+              </div>
+              <i class="fas fa-caret-right fwd-btn"/>
+            </div>
+
+
+
+            </div>
+            
 
           <div className="divider">
             <div className="divider-box"></div>

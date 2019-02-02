@@ -3,7 +3,6 @@ import Pokedex from '../components/Pokedex';
 import {connect} from 'react-redux';
 import {getPokemon} from '../actions'
 
-
 class PokedexView extends Component {
 constructor(props){
     super(props);
@@ -17,13 +16,26 @@ handleChanges = e =>{
     })
 }
 getPokemon = e =>{
+    this.colorChange();
     e.preventDefault();
     this.props.getPokemon(this.state.searchPoke);
     this.setState({searchPoke: '',})
     e.target.reset();
 }
+colorChange = () =>{
+
+    const blue = document.querySelector('.blue-light');
+    this.props.isFetchingPokemon ? 
+    setInterval( () =>
+        blue.classList.add('bg-blue-darkest')
+    , 100) :
+    blue.classList.remove('bg-blue-darkest')
+    
+  }
+
 
 componentDidMount(){
+    this.colorChange()
     this.props.getPokemon('pikachu')
 }
   render() {

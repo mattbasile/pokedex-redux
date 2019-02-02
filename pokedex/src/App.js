@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 import PokedexView from './views/PokedexView';
 
 class App extends Component {
