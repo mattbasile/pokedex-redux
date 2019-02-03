@@ -63,14 +63,21 @@ export default class Pokedex extends Component {
           </div>
             <div className="stat-screen-container bg-red-light">
               <div className="stat-screen text-green align-left">
-                {this.props.selectedPokemon === false ? (<p>Searching...</p> )
-                : (<div>
-                    <h2>Name:</h2>
-                    <p>{this.props.selectedPokemon.name}</p>    
+                {this.props.isFetchingPokemon ? (<h2 className="mt-16">Searching...</h2> )
+                : this.props.error ? (<h2>This Pokemon does not exist, try searching again!</h2>)
+                :(<div>
+                    <div className="stat-name">
+                      <h2>Name:</h2>
+                      <p>{this.props.selectedPokemon.name}</p>    
+                    </div>
+                    <div className="stat-type">
                     <h2>Type:</h2>
-                    <ul>{this.props.pokemonTypes.map(type => <li>{type.type.name}</li>)}</ul>
+                    <div className="moves">{this.props.pokemonTypes.map(type => <p>{type.type.name}</p>)}</div>
+                    </div>
+                    <div className="stat-moves">
                     <h2>Moves:</h2>
-                    <ul>{this.props.pokemonMoves.map(move => <li>{move.move.name}</li>)}</ul>
+                    <div className="moves">{this.props.pokemonMoves.map(move => <p>{move.move.name}</p>)}</div>
+                    </div>
                   </div>)
                 
               }

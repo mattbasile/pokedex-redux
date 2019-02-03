@@ -33,13 +33,13 @@ body {
 .left-pokedex-container{
   height: 600px;
   width: 50%;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   border-radius: 2px;
 }
 .right-pokedex-container{
   height: 535px;
   width: 50%;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   border-radius: 2px;
   align-self: flex-end;
   
@@ -293,6 +293,33 @@ body {
 }
 
 .search-bar{
-  height: 105px;
-  
+  height: 105px; 
+}
+
+.stat-name,
+.stat-type,
+.stat-moves{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stat-name p,
+.stat-type p {
+  margin: 0 15px;
+}
+
+.stat-moves .moves{
+  text-align: left;
+}
+.stat-moves .moves p{
+  margin-left: 15px;
+}
+
+.stat-name h2,
+.stat-type h2,
+.stat-moves h2 {
+  font-family: "Digital Clock";
+  margin-left: 7px;
 }
